@@ -1,0 +1,13 @@
+склады:
+1)Person(имя, пол, дата рождения, должность, стаж работы, Permissions, метод Info())
+2)IAccessLevel(SaveToFile(), OpenFromFile(), printStorage());
+	Database(Id, login, parol)
+		окно логина(отдельно)
+	User(voteForRemoveAdminAdminov()),
+	Admin(removeStorage(), createStorage(), removeUser(), addUser(), editStorage(), see users, storages lists)
+		AdminAdminov(removeAdmin(), addAdmin(), All ADMIN permissions);
+3)а чо звал, склад?
+	database ======	Storage (capacity, currentcapacity, адрес склада) (comfortable interfacing)
+		 	typeItem(хранимые весчи и их свiйства)
+	3.2)functioo anal of storage (погрузка(), выгрузка() queriyt)
+		
