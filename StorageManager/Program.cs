@@ -20,7 +20,7 @@ namespace StorageManager
 
             if (validationFlag)
             {
-                MainForm mainForm= new MainForm();
+                MainFormAdmin mainForm= new MainFormAdmin();
                 Application.Run(mainForm);
             }
 

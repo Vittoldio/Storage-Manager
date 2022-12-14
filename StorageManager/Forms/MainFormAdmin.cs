@@ -1,8 +1,8 @@
 namespace StorageManager
 {
-    public partial class MainForm : Form
+    public partial class MainFormAdmin : Form
     {
-        public MainForm()
+        public MainFormAdmin()
         {
             // Здесь будут все уведомления для юзера/админа + панель доступа в другие формы 
             InitializeComponent();

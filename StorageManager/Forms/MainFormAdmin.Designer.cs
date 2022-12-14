@@ -1,6 +1,6 @@
 ﻿namespace StorageManager
 {
-    partial class MainForm
+    partial class MainFormAdmin
     {
         /// <summary>
         ///  Required designer variable.
