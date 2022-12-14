@@ -17,5 +17,10 @@ namespace StorageManager
         {
 
         }
+
+        public void SellSection()
+        {
+
+        }
     }
 }
