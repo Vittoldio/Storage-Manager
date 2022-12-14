@@ -13,14 +13,11 @@ namespace StorageManager
     {
         string productName;
         int count;
-        DateTime creationDate, expiredDate;
 
-        public Product(string productName, int count, DateTime creationDate, DateTime expiredDate)
+        public Product(string productName, int count)
         {
             this.productName = productName;
             this.count = count;
-            this.creationDate = creationDate;
-            this.expiredDate = expiredDate;
         }
 
 
