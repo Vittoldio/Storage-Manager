@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace StorageManager
 {
-    interface ICustomUser
+    internal class Product
     {
-        //public abstract void ();
-        //public abstract void 
-
-        
     }
 }
