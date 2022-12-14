@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace StorageManager
 {
-    internal class Product
+    /*
+     * Подтягивает информацию о себе с дб
+     */
+    class Product
     {
+        string productName;
+        int count;
+        DateTime creationDate, expiredDate;
+
+        public Product(string productName, int count, DateTime creationDate, DateTime expiredDate)
+        {
+            this.productName = productName;
+            this.count = count;
+            this.creationDate = creationDate;
+            this.expiredDate = expiredDate;
+        }
+
+
     }
 }
