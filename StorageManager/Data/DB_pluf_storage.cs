@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StorageManager
+namespace StorageManager.Data
 {
     /*
      *  Заглушка от которой в теорий мы получаем данные.
@@ -14,8 +14,8 @@ namespace StorageManager
      * Для записки:
      *      storage агрегирует в себя продукт
      */
-    class DB_plug_storage 
-    {                       
+    class DB_plug_storage
+    {
         private string name;
         private string adress;
         private Product someProduct;
