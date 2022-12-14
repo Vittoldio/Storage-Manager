@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StorageManager
 {
-    internal class AccessLevel
+    interface IAccess
     {
     }
 }
