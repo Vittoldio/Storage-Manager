@@ -11,15 +11,10 @@ namespace StorageManager
         [STAThread]
         static void Main()
         {
-
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
             AuthorizationForm login = new AuthorizationForm();
             Application.Run(login);
-
-
             if (validationFlag && adminFlag)
             {
                 MainFormAdmin mainForm = new MainFormAdmin();
