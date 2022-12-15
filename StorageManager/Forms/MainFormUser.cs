@@ -59,7 +59,7 @@ namespace StorageManager
             this.MinimumSize = new Size(800, 600);
             this.MaximumSize = new Size(800, 600);
             this.TaskSchedulerBox.Text = "Schedule";
-            this.UserNameLabel.Text = Program.UserName;
+            //this.UserNameLabel.Text = Program.UserName;
             ScheduleFormer();
         }
         void ScheduleFormer()

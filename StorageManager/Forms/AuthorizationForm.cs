@@ -31,8 +31,8 @@ namespace StorageManager
                 FailedAuth();
                 return;
             }
-            Program.validationFlag = true;
-            Program.UserName = db.GetLogin();
+            //Program.validationFlag = true;
+            //Program.UserName = db.GetLogin();
             this.Close();
             
         }
