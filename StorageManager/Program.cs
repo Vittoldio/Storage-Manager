@@ -14,7 +14,7 @@ namespace StorageManager
             ApplicationConfiguration.Initialize();
 
             AuthorizationForm login = new AuthorizationForm();
-            Application.Run(login);
+            Application.Run(new MainFormAdmin());
             if (validationFlag && adminFlag)
             {
                 MainFormAdmin mainForm = new MainFormAdmin();

@@ -17,6 +17,8 @@ namespace StorageManager.TaskManager
 
         private string taskDescribe;// ХЗ нужно ли
         public string TaskDescribe { get { return taskDescribe; } }
+        private DateTime completeTime;
+        public DateTime CompleteTime { get { return completeTime; } }
 
         private TaskType taskType;
         public TaskType TaskType { get { return taskType; } }

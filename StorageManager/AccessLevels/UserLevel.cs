@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StorageManager.Enumirations
+namespace StorageManager.AccessLevels
 {
-    enum TaskType{
-        sell,
-        load,
-        unload,
-
+    interface UserLevel
+    {
     }
 }

@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StorageManager
+namespace StorageManager.AccessLevels
 {
-    interface ICustomUser
+    interface AdminLevel
     {
-        //public abstract void ();
-        //public abstract void 
-
-        
     }
 }
