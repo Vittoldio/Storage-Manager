@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TaskSchedulerBox = new System.Windows.Forms.GroupBox();
             this.UserLabel = new System.Windows.Forms.Label();
             this.UserNameLabel = new System.Windows.Forms.Label();
+            this.TaskSchedulerBox = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // TaskSchedulerBox
-            // 
-            this.TaskSchedulerBox.Location = new System.Drawing.Point(401, 12);
-            this.TaskSchedulerBox.Name = "TaskSchedulerBox";
-            this.TaskSchedulerBox.Size = new System.Drawing.Size(401, 426);
-            this.TaskSchedulerBox.TabIndex = 0;
-            this.TaskSchedulerBox.TabStop = false;
-            this.TaskSchedulerBox.Text = "groupBox1";
             // 
             // UserLabel
             // 
             this.UserLabel.AutoSize = true;
             this.UserLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UserLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.UserLabel.Location = new System.Drawing.Point(12, 9);
+            this.UserLabel.Location = new System.Drawing.Point(22, 17);
+            this.UserLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserLabel.Name = "UserLabel";
             this.UserLabel.Size = new System.Drawing.Size(127, 28);
             this.UserLabel.TabIndex = 1;
@@ -57,20 +49,31 @@
             // 
             this.UserNameLabel.AutoSize = true;
             this.UserNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserNameLabel.Location = new System.Drawing.Point(12, 51);
+            this.UserNameLabel.Location = new System.Drawing.Point(22, 94);
+            this.UserNameLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserNameLabel.Name = "UserNameLabel";
             this.UserNameLabel.Size = new System.Drawing.Size(65, 28);
             this.UserNameLabel.TabIndex = 2;
             this.UserNameLabel.Text = "label2";
             // 
+            // TaskSchedulerBox
+            // 
+            this.TaskSchedulerBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TaskSchedulerBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TaskSchedulerBox.Location = new System.Drawing.Point(271, 17);
+            this.TaskSchedulerBox.Name = "TaskSchedulerBox";
+            this.TaskSchedulerBox.Size = new System.Drawing.Size(414, 371);
+            this.TaskSchedulerBox.TabIndex = 3;
+            // 
             // MainFormUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1500, 832);
+            this.Controls.Add(this.TaskSchedulerBox);
             this.Controls.Add(this.UserNameLabel);
             this.Controls.Add(this.UserLabel);
-            this.Controls.Add(this.TaskSchedulerBox);
+            this.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MainFormUser";
             this.Text = "MainFormUser";
             this.ResumeLayout(false);
@@ -79,9 +82,8 @@
         }
 
         #endregion
-
-        private GroupBox TaskSchedulerBox;
         private Label UserLabel;
         private Label UserNameLabel;
+        private Panel TaskSchedulerBox;
     }
 }
