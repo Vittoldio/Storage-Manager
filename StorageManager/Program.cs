@@ -1,3 +1,6 @@
+
+using StorageManager.Forms;
+
 namespace StorageManager
 {
     internal static class Program
@@ -12,18 +15,18 @@ namespace StorageManager
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-
             AuthorizationForm login = new AuthorizationForm();
             Application.Run(login);
             if (validationFlag && adminFlag)
             {
-                MainFormAdmin mainForm = new MainFormAdmin();
+                MainForm mainForm = new MainForm();
                 Application.Run(mainForm);
             }
             else if (validationFlag)
             {
                 MainFormUser mainForm = new MainFormUser();
                 Application.Run(mainForm);
+                Application.Run(new MainForm());
             }
 
 

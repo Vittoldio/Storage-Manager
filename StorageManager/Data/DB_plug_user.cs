@@ -13,22 +13,45 @@ namespace StorageManager
      */
     class DB_plug_user
     {
-        private string? login;
-        string Login { get; set; }
-        private string? password;
-        string Password { get; set; }
-        public DB_plug_user(string login, string password) { 
-            this.Login = login;
-            this.Password = password;
+        public List<string> login;
+        //List<string> Login { get; set; }
+        public List<string> password;
+        // List<string> Password { get; set; }
+        public DB_plug_user(string login, string password)
+        {
+            this.login = new List<string> { login };
+            this.password = new List<string> { password };
+        }
+        public DB_plug_user(List<string> login, List<string> password)
+        {
+            this.login = login;
+            this.password = password;
         }
 
-        public string GetPassword()
+        public bool LoginCheck(string s)
         {
-            return this.Password;
+            for (int i = 0; i < login.Count; i++)
+            {
+                if (login[i] == s)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
-        public string GetLogin()
+        public bool PasswordCheck(string log, string pas)
         {
-            return this.Login;
+            for (int i = 0; i < login.Count; i++)
+            {
+                if (login[i] == log)
+                {
+                    if (password[i] == pas)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

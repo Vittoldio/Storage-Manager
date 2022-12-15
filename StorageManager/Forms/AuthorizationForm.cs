@@ -21,20 +21,22 @@ namespace StorageManager
         private void AuthButton_Click(object sender, EventArgs e)
         {
             DB_plug_user db = new DB_plug_user("Metaphysics", "password");
-            if (this.LoginTextBox.Text != db.GetLogin()) // if any user.login will not be found
+
+            if (!db.LoginCheck(this.LoginTextBox.Text)) // if any user.login will not be found
             {
                 FailedAuth();
                 return;
             }
-            if (this.PasswordTextBox.Text != db.GetPassword()) // if concret user.password will not be true not be noe false koro4e
+            if (!db.PasswordCheck(this.LoginTextBox.Text, this.PasswordTextBox.Text)) // if concret user.password will not be true not be noe false koro4e
             {
                 FailedAuth();
                 return;
             }
-            //Program.validationFlag = true;
-            //Program.UserName = db.GetLogin();
+
+            Program.UserName = LoginTextBox.Text;
+            Program.validationFlag = true;
             this.Close();
-            
+
         }
         private void FailedAuth()
         {
