@@ -33,8 +33,6 @@ namespace StorageManager
                 return;
             }
 
-            Program.UserName = LoginTextBox.Text;
-            Program.validationFlag = true;
             this.Close();
 
         }

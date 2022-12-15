@@ -36,9 +36,7 @@ namespace StorageManager
             this.scheduleBase.Add(t2);
             this.scheduleBase.Add(t2);
 
-            //scheduleBase = tasks.GetMySchedule(Program.UserName);
             InitializeComponent();
-            this.UserNameLabel.Text = Program.UserName;
             this.TaskSchedulerBox.AutoScroll = true;
             VisualInit();
 

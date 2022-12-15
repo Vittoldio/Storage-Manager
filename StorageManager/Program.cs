@@ -1,38 +1,17 @@
-
 using StorageManager.Forms;
-
 namespace StorageManager
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
-        public static bool validationFlag = false;
-        public static bool adminFlag = false;
-        public static string UserName;
         [STAThread]
-        static void Main()
+        public static void Main()
         {
+            Application.EnableVisualStyles();
             ApplicationConfiguration.Initialize();
-            AuthorizationForm login = new AuthorizationForm();
-            Application.Run(login);
-            if (validationFlag && adminFlag)
-            {
-                MainForm mainForm = new MainForm();
-                Application.Run(mainForm);
-            }
-            else if (validationFlag)
-            {
-                MainFormUser mainForm = new MainFormUser();
-                Application.Run(mainForm);
-                Application.Run(new MainForm());
-            }
-
-
-
-            //Application.Run(new MainForm());
-            
+            Application.Run(new MainForm());            
         }
     }
 }
