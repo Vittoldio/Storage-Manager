@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace StorageManager.Enumirations
 {
     enum TaskType{
+        relocation,
         sell,
-        load,
-        unload,
+        remove,
 
     }
 }
