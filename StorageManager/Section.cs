@@ -22,5 +22,14 @@ namespace StorageManager
         {
 
         }
+
+        public void RemoveSection()
+        {
+
+        }
+        public void RelocateSection()
+        {
+
+        }
     }
 }

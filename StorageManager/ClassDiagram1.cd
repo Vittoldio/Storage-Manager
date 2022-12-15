@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StorageManager.Data.DB_plug_storage">
+    <Position X="7.25" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAEAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DB_pluf_storage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.DB_plug_user">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAgAAEAA=</HashCode>
+      <FileName>Data\DB_plug_user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.AuthorizationForm">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgRQAAQAACBAAAAAAACAAAAiAAAAAEAAAAAgAAAAAAA=</HashCode>
+      <FileName>Forms\AuthorizationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.MainFormUser">
+    <Position X="14.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgABACCACAIQACAAAMAEgAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\MainFormUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.Forms.MainForm">
+    <Position X="12.75" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACCAEgIISAAREAAAACBIAACCPi5cQACQAASAQABJBA=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.TaskManager.Task_">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAACAAAAQAAAAEAAAAAAAAAAAAAAAAAAAIAAgACAA=</HashCode>
+      <FileName>TaskManager\Task_.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.TaskManager.TaskSchedule">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABCAAAAAAAAAAAgAAAAACAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>TaskManager\TaskSchedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.Parser">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAACAAAAAQAAAAAEAQAAAAAQAAA=</HashCode>
+      <FileName>Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.Person">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAAgAIAAABAAABAQAAAQACAAEAAgACAAAAAAAAAA=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.Product">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.Program">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorageManager.Section" Collapsed="true">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAgAEAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Section.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="StorageManager.Enumirations.TaskType">
+    <Position X="10" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAEAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Enumirations\TaskType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

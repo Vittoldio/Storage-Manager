@@ -11,8 +11,8 @@ namespace StorageManager
      */
     class Product
     {
-        string productName;
-        int count;
+        public string productName;
+        public int count;
 
         public Product(string productName, int count)
         {

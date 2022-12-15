@@ -33,6 +33,7 @@ namespace StorageManager
                 return;
             }
 
+            Program.validationFlag = true;
             this.Close();
 
         }
