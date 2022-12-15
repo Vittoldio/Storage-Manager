@@ -28,6 +28,19 @@ namespace StorageManager
             this.password = password;
         }
 
+        public DB_plug_user()
+        {
+            Parser parser = new Parser("C:\\Users\\MetaphysicsNecrosis\\source\\repos\\Storage-ManagerV2\\passwords.txt");
+            List<string> list = parser.GetStringList();
+            this.login = new List<string>();
+            this.password = new List<string>();
+            for(int i = 0;i < list.Count;i += 2)
+            {
+                this.login.Add(list[i]);
+                this.password.Add(list[i + 1]);
+            }
+
+        }
         public bool LoginCheck(string s)
         {
             for (int i = 0; i < login.Count; i++)

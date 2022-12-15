@@ -20,7 +20,7 @@ namespace StorageManager
         }
         private void AuthButton_Click(object sender, EventArgs e)
         {
-            DB_plug_user db = new DB_plug_user("Metaphysics", "password");
+            DB_plug_user db = new DB_plug_user();
 
             if (!db.LoginCheck(this.LoginTextBox.Text)) // if any user.login will not be found
             {

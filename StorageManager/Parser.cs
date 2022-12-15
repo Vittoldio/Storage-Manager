@@ -25,6 +25,10 @@ namespace StorageManager
             {
                 if (strs[i] != "" && strs[i] != " " && strs[i] != "\n" && strs[i][0] != (char)13)
                 {
+                    if(strs[i][strs[i].Length - 1] == '\r')
+                    {
+                        strs[i] = strs[i].Remove(strs[i].Length - 1);
+                    }
                     list.Add(strs[i]);
                 }
             }
