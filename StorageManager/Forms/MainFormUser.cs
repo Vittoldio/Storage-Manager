@@ -1,5 +1,4 @@
-﻿using StorageManager.Forms;
-using StorageManager.TaskManager;
+﻿using StorageManager.TaskManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
