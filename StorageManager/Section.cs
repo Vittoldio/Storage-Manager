@@ -18,7 +18,7 @@ namespace StorageManager
 
         }
 
-        public void SellSection()
+        public void SellSection(ref TaskScheduler schedule)
         {
 
         }

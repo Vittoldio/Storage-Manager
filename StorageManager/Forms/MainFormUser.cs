@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageManager.TaskManager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,19 @@ namespace StorageManager
 {
     public partial class MainFormUser : Form
     {
+        const int locateStep = 20; //px
+        int stepAtMoment = 20;
         
         public MainFormUser()
         {
             InitializeComponent();
+            scheduleBase = tasks.GetMySchedule(Program.UserName);
             VisualInit();
             
         }
-        public void ScheduleCreating()
-        {
 
-        }
+        TaskSchedule tasks = new TaskSchedule();
+        List<Task_> scheduleBase = new List<Task_>() ;
         public void VisualInit()
         {
             this.MinimumSize = new Size(800, 600);

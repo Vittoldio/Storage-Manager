@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StorageManager.TaskManager
 {
-    class Task
+    class Task_
     {
         private string taskOwner;
         public string TaskOwner { get { return taskOwner; } }
@@ -21,7 +21,7 @@ namespace StorageManager.TaskManager
         private TaskType taskType;
         public TaskType TaskType { get { return taskType; } }
 
-        public Task(string taskOwner, string taskPerformer, string taskDescribe, TaskType taskType)
+        public Task_(string taskOwner, string taskPerformer, string taskDescribe, TaskType taskType)
         {
             this.taskType = taskType;
             this.taskOwner = taskOwner;
