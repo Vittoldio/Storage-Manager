@@ -18,9 +18,9 @@ namespace StorageManager
         
         public MainFormUser()
         {
-            Task_ t = new Task_("", "", "", Enumirations.TaskType.sell);
-            Task_ t1 = new Task_("", "", "", Enumirations.TaskType.relocation);
-            Task_ t2 = new Task_("", "", "", Enumirations.TaskType.sell);
+            Task_ t = new Task_("goodman", "", "", Enumirations.TaskType.sell);
+            Task_ t1 = new Task_("person", "", "", Enumirations.TaskType.relocation);
+            Task_ t2 = new Task_("beer", "", "", Enumirations.TaskType.sell);
             this.scheduleBase.Add(t);
             this.scheduleBase.Add(t1);
             this.scheduleBase.Add(t2);
@@ -38,6 +38,7 @@ namespace StorageManager
 
             //scheduleBase = tasks.GetMySchedule(Program.UserName);
             InitializeComponent();
+            this.UserNameLabel.Text = Program.UserName;
             this.TaskSchedulerBox.AutoScroll = true;
             VisualInit();
 
@@ -71,18 +72,16 @@ namespace StorageManager
                 this.labels[i].AutoSize = true;
                 if (this.scheduleBase[i].TaskType == Enumirations.TaskType.sell)
                 {
-                    this.labels[i].Text = "Sell";
+                    this.labels[i].Text = "Sell, by " + $"{this.scheduleBase[i].TaskOwner}";
                 }
                 if (this.scheduleBase[i].TaskType == Enumirations.TaskType.remove)
                 {
-                    this.labels[i].Text = "Remove";
+                    this.labels[i].Text = "Remove, by " + $"{this.scheduleBase[i].TaskOwner}";
                 }
                 if (this.scheduleBase[i].TaskType == Enumirations.TaskType.relocation)
                 {
-                    this.labels[i].Text = "Relocationnnnnnn";
+                    this.labels[i].Text = "Relocation, by " + $"{this.scheduleBase[i].TaskOwner}";
                 }
-                //this.labels[i].Text = "hui";
-                
                 this.labels[i].Location = new Point(locateStep, this.stepAtMoment);
                 this.stepAtMoment += locateStep * 3;
                 
