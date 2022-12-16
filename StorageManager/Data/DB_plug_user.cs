@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageManager.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +18,7 @@ namespace StorageManager
         //List<string> Login { get; set; }
         public List<string> password;
         // List<string> Password { get; set; }
-        public DB_plug_user(string login, string password)
-        {
-            this.login = new List<string> { login };
-            this.password = new List<string> { password };
-        }
-        public DB_plug_user(List<string> login, List<string> password)
-        {
-            this.login = login;
-            this.password = password;
-        }
-
-        public DB_plug_user()
+        public DB_plug_user(string s)
         {
             Parser parser = new Parser("C:\\Users\\MetaphysicsNecrosis\\source\\repos\\Storage-ManagerV2\\passwords.txt");
             List<string> list = parser.GetStringList();
@@ -40,6 +30,22 @@ namespace StorageManager
                 this.password.Add(list[i + 1]);
             }
 
+        }
+        public DB_plug_user()
+        {
+            SQLData data = new SQLData();
+            List<string> gotData = new List<string>();
+
+            gotData = data.Get_login_password();
+
+            this.login = new List<string>();
+            this.password = new List<string>();
+
+            for(int i = 0;i < gotData.Count;i += 2)
+            {
+                this.login.Add(gotData[i]);
+                this.password.Add((gotData[i + 1]));
+            }
         }
         public bool LoginCheck(string s)
         {

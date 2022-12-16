@@ -15,27 +15,14 @@ namespace StorageManager
     {
         const int locateStep = 30; //px
         int stepAtMoment = 20;
+
+        TaskSchedule tasks = new TaskSchedule(new Data.DB_plug_task());
+        List<Task_> scheduleBase = new List<Task_>();
+        List<Label> labels = new List<Label>();
         
         public MainFormUser()
         {
-            Task_ t = new Task_("goodman", "", "", Enumirations.TaskType.sell);
-            Task_ t1 = new Task_("person", "", "", Enumirations.TaskType.relocation);
-            Task_ t2 = new Task_("beer", "", "", Enumirations.TaskType.sell);
-            this.scheduleBase.Add(t);
-            this.scheduleBase.Add(t1);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-            this.scheduleBase.Add(t2);
-
+            this.scheduleBase = tasks.GetMySchedule_ByLogin("You");
             InitializeComponent();
             this.TaskSchedulerBox.AutoScroll = true;
             VisualInit();
@@ -46,12 +33,6 @@ namespace StorageManager
             }
             
         }
-        
-
-        TaskSchedule tasks = new TaskSchedule();
-        List<Task_> scheduleBase = new List<Task_>();
-        List<Label> labels = new List<Label>();
-        
         void VisualInit()
         {
 
