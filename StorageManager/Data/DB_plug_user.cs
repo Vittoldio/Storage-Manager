@@ -36,7 +36,7 @@ namespace StorageManager
             SQLData data = new SQLData();
             List<string> gotData = new List<string>();
 
-            gotData = data.Get_login_password();
+            gotData = data.Get_id_login_password();
 
             this.login = new List<string>();
             this.password = new List<string>();

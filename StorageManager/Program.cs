@@ -20,8 +20,12 @@ namespace StorageManager
             {
                 MainForm mainForm = new MainForm();
                 Application.Run(mainForm);
-            }else if(validationFlag){
-                MainFormUser mainform = new MainFormUser();
+            }
+            //тут ебанул не MainFormUser, а просто MainForm
+            //не ебу как поставить себя админом
+            else if(validationFlag)
+            {
+                MainForm mainform = new MainForm();
                 Application.Run(mainform);
             }
         }

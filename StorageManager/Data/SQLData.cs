@@ -10,8 +10,9 @@ namespace StorageManager.Data
 {
     internal class SQLData
     {
-        const string connectionString = @"Data Source=DESKTOP-A9QI9P7\MSSQLSERVER01;Initial Catalog=Storage;Integrated Security=True";
-        public List<string> Get_login_password()
+        //change data source
+        const string connectionString = @"Data Source=HOME-PC;Initial Catalog=Storage;Integrated Security=True";
+        public List<string> Get_id_login_password()
         {
             List<string> result = new List<string>();
             string expressionString = "SELECT * FROM Users";
@@ -30,11 +31,17 @@ namespace StorageManager.Data
                     // выводим названия столбцов
                     while (reader.Read()) // построчно считываем данные
                     {
-                        object id = reader.GetValue(1);
-                        object city = reader.GetValue(2);
-
-                        result.Add((string)id);
-                        result.Add((string)city);
+                        object id = reader.GetValue(0);
+                        object login = reader.GetValue(1);
+                        object password = reader.GetValue(2);
+                        /*
+                         * ЗДЕСЬ надо решить проблему со стрингами,
+                         * потому что в таблице базы пользователей нужен ещё и ID
+                         * а добавляется в столбец login пароль почемута
+                        */
+                        result.Add((string)id.ToString());
+                        result.Add((string)login);
+                        result.Add((string)password);
                     }
                 }
             }
