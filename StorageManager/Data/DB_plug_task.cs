@@ -29,8 +29,8 @@ namespace StorageManager.Data
             TaskType taskData = new TaskType();
             for (int i = 0;i < gotData.Count;i += 3) 
             {
-                this.taskOwner.Add((string)gotData[i + 1]);
-                this.taskPerformer.Add((string)gotData[i + 2]);
+                this.taskOwner.Add((string)gotData[i ]);
+                this.taskPerformer.Add((string)gotData[i + 1]);
 
                 if (gotData[i + 2] == "0")
                 {
