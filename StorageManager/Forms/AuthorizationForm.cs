@@ -24,11 +24,16 @@ namespace StorageManager
 
             if (!db.LoginCheck(this.LoginTextBox.Text)) // if any user.login will not be found
             {
+                label1.Text = "не тот логин";
+                label1.Visible = true;
                 FailedAuth();
                 return;
             }
             if (!db.PasswordCheck(this.LoginTextBox.Text, this.PasswordTextBox.Text)) // if concret user.password will not be true not be noe false koro4e
             {
+                label2.Text = "пароль вспоминай";
+                label2.Visible = true;
+                label1.Visible = false;
                 FailedAuth();
                 return;
             }
@@ -42,6 +47,7 @@ namespace StorageManager
             this.authTries++;
             if (authTries == 20)
             {
+                MessageBox.Show("nice try");
                 Application.Exit();
             }
         }
