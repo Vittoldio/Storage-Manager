@@ -41,10 +41,10 @@ namespace StorageManager
             this.login = new List<string>();
             this.password = new List<string>();
 
-            for(int i = 0;i < gotData.Count;i += 2)
+            for(int i = 0;i < gotData.Count;i += 3)
             {
-                this.login.Add(gotData[i]);
-                this.password.Add((gotData[i + 1]));
+                this.login.Add(gotData[i + 1]);
+                this.password.Add((gotData[i + 2]));
             }
         }
         public bool LoginCheck(string s)

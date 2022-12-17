@@ -18,11 +18,11 @@ namespace StorageManager.Forms
             InitializeComponent();
             
             SetPermissions();
-            UpdateTable();
+            //UpdateTable();
             
         }
         SQLData data = new SQLData(); //для синхры БД и таблиц наших
-        private void UpdateTable() //метод обновы таблицы пользователей, работает, но немного криво, типа
+       /* private void UpdateTable() //метод обновы таблицы пользователей, работает, но немного криво, типа
             //надо пофиксить то, что в столбец логин подаётся пассворд, а не логин
         {
             for(int i = 0; i<data.Get_id_login_password().Count;i++)
@@ -33,7 +33,18 @@ namespace StorageManager.Forms
             {
                 dataGridView2.Rows[i].Cells[i].Value = data.Get_id_login_password()[i];
             }
-        }
+        }*/
+       
+        /*
+         * У тебя таблица заполняется таким образом, если что, а ещё у меня эксепшн кидает
+         * 
+         *  1 2 3 4 5 6
+         *  * 0 0 0 0 0
+         *  0 * 0 0 0 0
+         *  0 0 * 0 0 0 
+         *  
+         *  , где * - получаемые значения
+         * */
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView2.AllowUserToAddRows = true;
