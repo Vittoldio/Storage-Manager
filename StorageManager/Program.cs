@@ -7,14 +7,14 @@ namespace StorageManager
         ///  The main entry point for the application.
         /// </summary>
         public static bool validationFlag = false;
-        static bool adminFlag = false;
+        static bool adminFlag = true;
         [STAThread]
        
         public static void Main()
         {
             Application.EnableVisualStyles();
             ApplicationConfiguration.Initialize();
-            AuthorizationForm login = new AuthorizationForm();
+            MainForm login = new MainForm();
             Application.Run(login);
             if (validationFlag && adminFlag)
             {

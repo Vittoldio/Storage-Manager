@@ -14,7 +14,7 @@ namespace StorageManager.Data
     */
     public class Encryption
     {
-        private const string alphabet = "abcdefghijklmnopqrstuvwxyz";
+        private const string alphabet = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHJKLMNOPQRSTYVWXYZ";
 
         //метод для переворачивания строки
         private string Reverse(string inputText)
