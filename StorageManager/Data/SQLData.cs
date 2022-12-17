@@ -22,7 +22,6 @@ namespace StorageManager.Data
             {
                 // Открываем подключение
                 connection.Open();
-                Console.WriteLine("Подключение открыто");
                 SqlCommand command = new SqlCommand(expressionString, connection);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -53,9 +52,7 @@ namespace StorageManager.Data
             {
                 // закрываем подключение
                 connection.Close();
-                Console.WriteLine("Подключение закрыто...");
             }
-            Console.Read();
             return result;
         }
         public List<string> Get_tasks()
@@ -118,6 +115,4 @@ namespace StorageManager.Data
             return result;
         }
     }
-
-
 }
