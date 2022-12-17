@@ -65,8 +65,6 @@ namespace StorageManager
                 this.stepAtMoment += locateStep * 3;
                 
             }
-
-
         }
     }
 }

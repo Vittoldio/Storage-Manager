@@ -54,9 +54,6 @@ namespace StorageManager.Data
             {
                 this.gotTasks.Add(new Task_(this.taskOwner[i], this.taskPerformer[i], "", this.taskType[i]));
             }
-
         }
-
-
     }
 }
