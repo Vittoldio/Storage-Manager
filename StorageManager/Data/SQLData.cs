@@ -84,7 +84,7 @@ namespace StorageManager.Data
 
                         result.Add((string)taskOwner);
                         result.Add((string)taskPerformer);
-                        if ((int)taskType == 1)
+                        if ((int)taskType == 1 || (int)taskType == 0)
                         {
                             result.Add("1");
                         } 
