@@ -15,7 +15,7 @@ namespace StorageManager
             Application.EnableVisualStyles();
             ApplicationConfiguration.Initialize();
             AuthorizationForm login = new AuthorizationForm();
-            Application.Run(login);
+            Application.Run(new Modal_UpdateUsers());
             if (validationFlag && adminFlag)
             {
                 MainForm mainForm = new MainForm();
