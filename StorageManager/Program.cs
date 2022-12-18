@@ -1,7 +1,4 @@
 using StorageManager.Forms;
-using System.Diagnostics.Eventing.Reader;
-using System.Runtime.CompilerServices;
-
 namespace StorageManager
 {
     public static class Program
@@ -11,21 +8,23 @@ namespace StorageManager
         /// </summary>
         public static bool validationFlag = false;
         static bool adminFlag = true;
-        public static string login;
         [STAThread]
        
         public static void Main()
         {
-
             Application.EnableVisualStyles();
             ApplicationConfiguration.Initialize();
             AuthorizationForm login = new AuthorizationForm();
             Application.Run(login);
-            
             if (validationFlag && adminFlag)
             {
                 MainForm mainForm = new MainForm();
                 Application.Run(mainForm);
+            }
+            else if(validationFlag)
+            {
+                MainFormUser mainform = new MainFormUser();
+                Application.Run(mainform);
             }
         }
     }
