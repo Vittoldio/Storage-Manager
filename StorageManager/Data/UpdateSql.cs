@@ -12,7 +12,7 @@ namespace StorageManager.Data
 {
     class UpdateSql
     {
-        const string connectionString = @"Data Source=DESKTOP-A9QI9P7\MSSQLSERVER01;Initial Catalog=Storage;Integrated Security=True";
+        const string connectionString = @"Data Source=HOME-PC;Initial Catalog=Storage;Integrated Security=True";
         public void Add_login_password(string login, string password)
         {
             //List<string> result = new List<string>();

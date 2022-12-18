@@ -11,7 +11,7 @@ namespace StorageManager.Data
     internal class SQLData
     {
         //change data source
-        const string connectionString = @"Data Source=DESKTOP-A9QI9P7\MSSQLSERVER01;Initial Catalog=Storage;Integrated Security=True";
+        const string connectionString = @"Data Source=HOME-PC;Initial Catalog=Storage;Integrated Security=True";
         public List<string> Get_id_login_password()
         {
             List<string> result = new List<string>();
@@ -57,7 +57,7 @@ namespace StorageManager.Data
         }
         public List<string> Get_tasks()
         {
-            List<string> result = new List<string>();
+            List<string?> result = new List<string>();
             string expressionString = "SELECT * FROM Tasks";
             // Создание подключения
             SqlConnection connection = new SqlConnection(connectionString);

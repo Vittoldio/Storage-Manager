@@ -10,9 +10,9 @@ namespace StorageManager.Data
 {
     internal class DB_plug_task
     {
-        List<string> taskOwner;
-        List<string> taskPerformer;
-        List<TaskType> taskType;
+        public List<string> taskOwner;
+        public List<string> taskPerformer;
+        public List<TaskType> taskType;
 
         public List<Task_> gotTasks;
         public DB_plug_task()
@@ -29,7 +29,7 @@ namespace StorageManager.Data
             TaskType taskData = new TaskType();
             for (int i = 0;i < gotData.Count;i += 3) 
             {
-                this.taskOwner.Add((string)gotData[i ]);
+                this.taskOwner.Add((string)gotData[i]);
                 this.taskPerformer.Add((string)gotData[i + 1]);
 
                 if (gotData[i + 2] == "0")
@@ -46,7 +46,7 @@ namespace StorageManager.Data
                 }
                 else
                 {
-                    throw new Exception("Db sucks");
+                    this.taskType.Add(TaskType.relocation);
                 }
             }
             this.gotTasks = new List<Task_>();

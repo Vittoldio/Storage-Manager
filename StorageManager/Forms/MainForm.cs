@@ -70,5 +70,11 @@ namespace StorageManager.Forms
             dataGridView4.AllowUserToResizeColumns = false;
             dataGridView4.AllowUserToResizeRows = false;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bigbooobs bigbooobs = new bigbooobs();
+            bigbooobs.ShowDialog();
+        }
     }
 }
