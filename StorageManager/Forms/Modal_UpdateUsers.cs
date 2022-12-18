@@ -73,7 +73,7 @@ namespace StorageManager
             if (mode is false)
             {
                 UpdateSql sql = new UpdateSql();
-                if (sql.DoesExist_Login(this.loginTextBox.Text))
+                if (sql.DoesExist_Login(this.loginTextBox.Text) is false)
                 {
                     errorLabel.Text = "Login doesnt exist";
                     errorLabel.Visible = true;
