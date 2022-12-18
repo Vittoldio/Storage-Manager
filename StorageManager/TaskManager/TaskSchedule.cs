@@ -32,7 +32,7 @@ namespace StorageManager.TaskManager
             List<Task_> schedule = new List<Task_>();
             foreach (var task in this.tasks.gotTasks)
             {
-                if (task.TaskPerfomer == login)
+                if (task.TaskPerformer == login)
                 {
                     schedule.Add(task);
                 }
@@ -45,7 +45,7 @@ namespace StorageManager.TaskManager
             List<Task_> schedule = new List<Task_>();
             foreach (var task in this.tasks.gotTasks)
             {
-                if (task.TaskPerfomer == performer.TaskPerfomer)
+                if (task.TaskPerformer == performer.TaskPerformer)
                 {
                     schedule.Add(task);
                 }

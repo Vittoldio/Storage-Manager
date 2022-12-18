@@ -1,4 +1,5 @@
 ﻿using Microsoft.SqlServer.Server;
+using Microsoft.VisualBasic.Logging;
 using StorageManager.Enumirations;
 using StorageManager.TaskManager;
 using System;
@@ -12,19 +13,15 @@ namespace StorageManager.Data
 {
     class UpdateSql
     {
-        const string connectionString = @"Data Source=HOME-PC;Initial Catalog=Storage;Integrated Security=True";
+        const string connectionString = @"Data Source=DESKTOP-A9QI9P7\MSSQLSERVER01;Initial Catalog=Storage;Integrated Security=True";
         public void Add_login_password(string login, string password)
         {
             //List<string> result = new List<string>();
-            Encryption encrypt = new Encryption();
             string expressionString =
-                //String.Format($"INSERT INTO Users (Login, Password) VALUES('{login}','{encrypt.EncryptText(password)}')");
                 String.Format($"INSERT INTO Users (Login, Password) VALUES('{login}','{password}')");
-            // Создание подключения
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                // Открываем подключение
                 connection.Open();
                 SqlCommand command = new SqlCommand(expressionString, connection);
                 int number = command.ExecuteNonQuery();  
@@ -35,7 +32,6 @@ namespace StorageManager.Data
             }
             finally
             {
-                // закрываем подключение
                 connection.Close();
             }
         }
@@ -57,7 +53,6 @@ namespace StorageManager.Data
         public void Remove_login_password(string login)
         {
             //List<string> result = new List<string>();
-            Encryption encrypt = new Encryption();
             string expressionString =
                 //String.Format($"INSERT INTO Users (Login, Password) VALUES('{login}','{encrypt.EncryptText(password)}')");
                 String.Format($"DELETE FROM Users WHERE login = '{login}'");
@@ -83,11 +78,13 @@ namespace StorageManager.Data
 
         public void AddTask(Task_ inputData)
         {
-            //List<string> result = new List<string>();
-            Encryption encrypt = new Encryption();
+            int taskType;
+            if (inputData.TaskType == TaskType.relocation) taskType = 0;
+            if (inputData.TaskType == TaskType.remove) taskType = 2;
+            if (inputData.TaskType == TaskType.sell) taskType = 1;
             string expressionString =
                 String.
-                Format($"INSERT INTO Tasks (TaskOwner, TaskPerformer, TaskType) VALUES('{inputData.TaskOwner}','{inputData.TaskPerfomer}','{(int)inputData.TaskType}')");
+                Format($"INSERT INTO Tasks (TaskOwner, TaskPerformer, TaskType) VALUES('{inputData.TaskOwner}','{inputData.TaskPerformer}','{(int)inputData.TaskType}')");
             // Создание подключения
             SqlConnection connection = new SqlConnection(connectionString);
             try
@@ -110,11 +107,43 @@ namespace StorageManager.Data
 
         public void RemoveTask(Task_ inputData)
         {
-
+            string expressionString =
+                String.Format($"DELETE FROM Tasks WHERE taskOwner = '{inputData.TaskOwner}' AND taskPerformer = '{inputData.TaskPerformer}'");
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(expressionString, connection);
+                int number = command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
         public void RemoveTask_ByPerformer(string taskPerformer)
         {
-
+            string expressionString =
+                String.Format($"DELETE FROM Tasks WHERE taskPerformer = '{taskPerformer}'");
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(expressionString, connection);
+                int number = command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
         public void RemoveTask_ByPerformer(Task_ taskPerformer)
         {
@@ -127,7 +156,23 @@ namespace StorageManager.Data
         }
         public void RemoveTask_ByOwner(string taskOwner)
         {
-
+            string expressionString =
+                String.Format($"DELETE FROM Tasks WHERE taskOwner = '{taskOwner}'");
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(expressionString, connection);
+                int number = command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
         public void RemoveTask_ByOwner(Task_ taskOwner)
         {

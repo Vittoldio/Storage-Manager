@@ -1,5 +1,6 @@
 ﻿using StorageManager.Data;
 using StorageManager.Enumirations;
+using StorageManager.TaskManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,18 @@ namespace StorageManager.Forms
             comboBox3.Items.Add(TaskType.relocation);
             comboBox3.Items.Add(TaskType.remove);
             textBox2.Text = Program.login;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1 || comboBox3.SelectedIndex== -1)
+            {
+                return;
+            }
+
+            UpdateSql sql = new UpdateSql();
+            Task_ newTask = new Task_(Program.login, comboBox2.SelectedItem.ToString(), "",(TaskType)comboBox3.SelectedItem);
+            sql.AddTask(newTask);
         }
     }
 }

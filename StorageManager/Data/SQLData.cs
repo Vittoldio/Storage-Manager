@@ -12,32 +12,26 @@ namespace StorageManager.Data
     {
         //change data source
         const string connectionString = @"Data Source=DESKTOP-A9QI9P7\MSSQLSERVER01;Initial Catalog=Storage;Integrated Security=True";
+        SqlConnection connection = new SqlConnection(connectionString);
         public List<string> Get_id_login_password()
         {
             List<string> result = new List<string>();
             string expressionString = "SELECT * FROM Users";
             // Создание подключения
-            SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                // Открываем подключение
                 connection.Open();
                 SqlCommand command = new SqlCommand(expressionString, connection);
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows) // если есть данные
                 {
-                    // выводим названия столбцов
                     while (reader.Read()) // построчно считываем данные
                     {
                         object id = reader.GetValue(0);
                         object login = reader.GetValue(1);
                         object password = reader.GetValue(2);
-                        /*
-                         * ЗДЕСЬ надо решить проблему со стрингами,
-                         * потому что в таблице базы пользователей нужен ещё и ID
-                         * а добавляется в столбец login пароль почемута
-                        */
+
                         result.Add((string)id.ToString());
                         result.Add((string)login);
                         result.Add((string)password);
@@ -50,7 +44,6 @@ namespace StorageManager.Data
             }
             finally
             {
-                // закрываем подключение
                 connection.Close();
             }
             return result;
@@ -59,20 +52,15 @@ namespace StorageManager.Data
         {
             List<string> result = new List<string>();
             string expressionString = "SELECT * FROM Tasks";
-            // Создание подключения
-            SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                // Открываем подключение
                 connection.Open();
                 Console.WriteLine("Подключение открыто");
                 SqlCommand command = new SqlCommand(expressionString, connection);
                 SqlDataReader reader = command.ExecuteReader();
-
                 string param_taskType;
-                if (reader.HasRows) // если есть данные
+                if (reader.HasRows) 
                 {
-                    // выводим названия столбцов
                     while (reader.Read()) // построчно считываем данные
                     {
                         object taskOwner = reader.GetValue(0);
@@ -81,17 +69,17 @@ namespace StorageManager.Data
 
                         result.Add((string)taskOwner);
                         result.Add((string)taskPerformer);
-                        if ((int)taskType == 1 || (int)taskType == 0)
+                        if ( (int)taskType == 0)
+                        {
+                            result.Add("0");
+                        } 
+                        else if ((int)taskType == 1)
                         {
                             result.Add("1");
                         } 
                         else if ((int)taskType == 2)
                         {
                             result.Add("2");
-                        } 
-                        else if ((int)taskType == 3)
-                        {
-                            result.Add("3");
                         }
                         else
                         {

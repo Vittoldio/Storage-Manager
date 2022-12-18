@@ -15,9 +15,7 @@ namespace StorageManager
     class DB_plug_user
     {
         public List<string> login;
-        //List<string> Login { get; set; }
         public List<string> password;
-        // List<string> Password { get; set; }
         public DB_plug_user()
         {
             SQLData data = new SQLData();
@@ -31,7 +29,7 @@ namespace StorageManager
             for(int i = 0;i < gotData.Count;i += 3)
             {
                 this.login.Add(gotData[i + 1]);
-                this.password.Add((gotData[i + 2]));
+                this.password.Add(gotData[i + 2]);
             }
         }
         public bool LoginCheck(string s)

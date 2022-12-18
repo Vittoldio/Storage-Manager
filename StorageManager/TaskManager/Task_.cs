@@ -13,7 +13,7 @@ namespace StorageManager.TaskManager
         public string TaskOwner { get { return taskOwner; } }
 
         private string taskPerformer;
-        public string TaskPerfomer { get { return taskPerformer; } }
+        public string TaskPerformer { get { return taskPerformer; } }
 
         private string taskDescribe;// ХЗ нужно ли
         public string TaskDescribe { get { return taskDescribe; } }

@@ -1,4 +1,5 @@
 ﻿using StorageManager.Data;
+using StorageManager.TaskManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,16 @@ namespace StorageManager.Forms
 {
     public partial class MainForm : Form
     {
+        const int locateStep = 30; //px
+        List<Label> labels = new List<Label>();
         public MainForm()
         {
             InitializeComponent();
-            
+            this.TaskSchedulerBox.AutoScroll= true;
             SetPermissions();
             UpdateTable();
-            
+
+            ScheduleFormer();
         }
        private void UpdateTable() //метод обновы таблицы пользователей
        {
@@ -76,15 +80,61 @@ namespace StorageManager.Forms
         {
             Modal_UpdateUsers modal = new Modal_UpdateUsers();
             modal.ShowDialog();
+            UpdateTable();
             //modal.Visible = false;
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             bigbooobs modal = new bigbooobs();
             modal.ShowDialog();
+            ScheduleFormer();
 
+        }
+        void ScheduleFormer()
+        {
+            //Label[] labels = new Label[scheduleBase.Count];
+            TaskSchedule tasks = new TaskSchedule(new Data.DB_plug_task());
+            List<Label> localLabels = new List<Label>();
+            List<Task_> scheduleBase = new List<Task_>();
+            int stepAtMoment = 20;
+
+            for (int i = 0;i < labels.Count; i++)
+            {
+                this.TaskSchedulerBox.Controls.Remove(labels[i]);
+            }
+
+            scheduleBase = tasks.GetMySchedule_ByLogin(Program.login);
+            for (int i = 0; i < scheduleBase.Count; i++)
+            {
+                localLabels.Add(new Label());
+                localLabels[i].AutoSize = true;
+                if (scheduleBase[i].TaskType == Enumirations.TaskType.sell)
+                {
+                    localLabels[i].Text = "Sell, by " + $"{scheduleBase[i].TaskOwner}";
+                }
+                if (scheduleBase[i].TaskType == Enumirations.TaskType.remove)
+                {
+                    localLabels[i].Text = "Remove, by " + $"{scheduleBase[i].TaskOwner}";
+                }
+                if (scheduleBase[i].TaskType == Enumirations.TaskType.relocation)
+                {
+                    localLabels[i].Text = "Relocation, by " + $"{scheduleBase[i].TaskOwner}";
+                }
+                localLabels[i].Location = new Point(locateStep, stepAtMoment);
+                stepAtMoment += locateStep * 3;
+                this.TaskSchedulerBox.Controls.Add(localLabels[i]);
+            }
+            this.labels = localLabels;
+
+        }
+
+        private void removeTesksByUser_Click(object sender, EventArgs e)
+        {
+            UpdateSql sql = new UpdateSql();
+            sql.RemoveTask_ByOwner(Program.login);
+            ScheduleFormer();
         }
     }
 }
