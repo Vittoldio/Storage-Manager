@@ -80,7 +80,7 @@ namespace StorageManager
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            AddUser addUser = new AddUser();
+            UpdateSql addUser = new UpdateSql();
             DB_plug_user doesExist = new DB_plug_user();
 
             for (int i = 0;i < doesExist.login.Count;i++)
