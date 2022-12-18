@@ -40,6 +40,20 @@ namespace StorageManager.Data
             }
         }
 
+        public bool DoesExist_Login(string login)
+        {
+            DB_plug_user doesExist = new DB_plug_user();
+
+            for (int i = 0; i < doesExist.login.Count; i++)
+            {
+                if (doesExist.login[i] == login)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void Remove_login_password(string login)
         {
             //List<string> result = new List<string>();
