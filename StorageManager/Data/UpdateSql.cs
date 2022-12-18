@@ -60,7 +60,7 @@ namespace StorageManager.Data
             Encryption encrypt = new Encryption();
             string expressionString =
                 //String.Format($"INSERT INTO Users (Login, Password) VALUES('{login}','{encrypt.EncryptText(password)}')");
-                String.Format($"DELETE FROM Users WHERE login = {login}");
+                String.Format($"DELETE FROM Users WHERE login = '{login}'");
             // Создание подключения
             SqlConnection connection = new SqlConnection(connectionString);
             try

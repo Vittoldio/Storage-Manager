@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -95,7 +95,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(951, 512);
+            this.tabControl1.Size = new System.Drawing.Size(914, 600);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -105,7 +105,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(943, 479);
+            this.tabPage1.Size = new System.Drawing.Size(906, 567);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список рабочих";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(937, 471);
+            this.dataGridView1.Size = new System.Drawing.Size(900, 559);
             this.dataGridView1.TabIndex = 0;
             // 
             // FirstName
@@ -181,7 +181,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(943, 479);
+            this.tabPage2.Size = new System.Drawing.Size(906, 567);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "База пользователей";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -201,15 +201,15 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(937, 471);
+            this.dataGridView2.Size = new System.Drawing.Size(900, 559);
             this.dataGridView2.TabIndex = 0;
             // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
@@ -329,6 +329,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Назначение задач";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -351,6 +352,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Изменить список рабочих";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage5
             // 

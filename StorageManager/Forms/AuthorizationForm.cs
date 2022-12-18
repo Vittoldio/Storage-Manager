@@ -45,6 +45,7 @@ namespace StorageManager
                 return;
             }
             Program.validationFlag = true;
+            Program.login = this.LoginTextBox.Text;
             this.Close();
 
         }

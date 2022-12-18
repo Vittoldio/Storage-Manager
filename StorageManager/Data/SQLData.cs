@@ -75,9 +75,9 @@ namespace StorageManager.Data
                     // выводим названия столбцов
                     while (reader.Read()) // построчно считываем данные
                     {
-                        object taskOwner = reader.GetValue(0);
-                        object taskPerformer = reader.GetValue(1);
-                        object taskType = reader.GetValue(2);
+                        object taskOwner = reader.GetValue(1);
+                        object taskPerformer = reader.GetValue(2);
+                        object taskType = reader.GetValue(3);
 
                         result.Add((string)taskOwner);
                         result.Add((string)taskPerformer);

@@ -8,14 +8,15 @@ namespace StorageManager
         /// </summary>
         public static bool validationFlag = false;
         static bool adminFlag = true;
+        public static string login;
         [STAThread]
        
         public static void Main()
-        {
+       {
             Application.EnableVisualStyles();
             ApplicationConfiguration.Initialize();
             AuthorizationForm login = new AuthorizationForm();
-            Application.Run(new Modal_UpdateUsers());
+            Application.Run(new AuthorizationForm());
             if (validationFlag && adminFlag)
             {
                 MainForm mainForm = new MainForm();
